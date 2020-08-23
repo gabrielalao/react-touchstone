@@ -1,0 +1,78 @@
+// 
+// Group
+// ==============================
+
+
+// base for spacing
+
+.Group {
+	margin-bottom: @gutter-lg;
+}
+
+
+// provide a nice gutter between the first group and the header
+
+.Group--has-gutter-top,
+.Group:first-child {
+	margin-top: @gutter-lg;
+}
+
+
+// headings and footers - common
+
+.Group__header,
+.Group__footer {
+	color: @group-header-color;
+	font-size: @font-size-xs;
+	padding-left: @padding-base-horizontal;
+	padding-right: @padding-base-horizontal;
+}
+
+
+// group headings
+// sits above the group, giving it a title
+
+.Group__header {
+	line-height: 1;
+	margin-bottom: @group-gutter;
+	text-transform: uppercase;
+}
+
+
+// group footer
+// sits below the group, use if the group needs further explanation
+
+.Group__footer {
+	line-height: 1.1;
+	margin-top: @group-gutter;
+}
+
+
+// background of the group
+
+.Group__body {
+	.retina-1px-border-top-and-bottom( rgba(0,0,0,0.17) );
+	background-color: @group-bg;
+	color: @group-color;
+	display: block;
+
+	// when you want the whole group to be tappable
+	&.Tappable-active {
+		.transition( background-color 10ms linear 10ms ); // delay the tap highlight, it may just be a scroll
+		background-color: @item-bg-tap;
+	}
+
+	// transition in and out of tap bg highlight
+	&.Tappable-inactive {
+		.transition( background-color 200ms );
+	}
+}
+
+
+// content inside a group (rather than a list)
+
+.Group__inner {
+	line-height: 1.2;
+	padding: @padding-base-vertical @padding-base-horizontal;
+}
+
